@@ -59,10 +59,16 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in;
         }
 
         section.active {
             display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
@@ -77,6 +83,55 @@
             margin-bottom: 1rem;
         }
 
+        /* Team Section Styling */
+        #team .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .team-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+        }
+
+        .team-card .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            font-size: 1rem;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
         @media (max-width: 600px) {
             nav {
                 flex-direction: column;
@@ -87,6 +142,10 @@
             h1 {
                 font-size: 2rem;
             }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -96,6 +155,7 @@
             <a href="#" onclick="showTab('home')">Home</a>
             <a href="#" onclick="showTab('about')">About</a>
             <a href="#" onclick="showTab('projects')">Projects</a>
+            <a href="#" onclick="showTab('team')">Our Team</a>
             <a href="#" onclick="showTab('contact')">Contact</a>
         </nav>
     </header>
@@ -116,9 +176,76 @@
             <p>[insert projects here]</p>
         </section>
 
+        <section id="team">
+            <h1>Our Team</h1>
+            <p>Meet the talented individuals behind NushDev's innovative projects.</p>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar"></div>
+                    <h3>Elena Carter</h3>
+                    <div class="role">Lead Developer</div>
+                    <p>Elena drives our technical vision with expertise in full-stack development.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #e74c3c;"></div>
+                    <h3>James Patel</h3>
+                    <div class="role">UI/UX Designer</div>
+                    <p>James crafts intuitive and beautiful interfaces for our applications.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #9b59b6;"></div>
+                    <h3>Sophia Nguyen</h3>
+                    <div class="role">Frontend Developer</div>
+                    <p>Sophia brings our designs to life with clean, responsive code.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #1abc9c;"></div>
+                    <h3>Michael Torres</h3>
+                    <div class="role">Backend Developer</div>
+                    <p>Michael ensures our servers run smoothly and securely.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #f1c40f;"></div>
+                    <h3>Olivia Kim</h3>
+                    <div class="role">Project Manager</div>
+                    <p>Olivia keeps our projects on track with exceptional organization.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #e67e22;"></div>
+                    <h3>Lucas Brown</h3>
+                    <div class="role">Data Scientist</div>
+                    <p>Lucas analyzes data to drive insights for our projects.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #2ecc71;"></div>
+                    <h3>Ava Singh</h3>
+                    <div class="role">QA Engineer</div>
+                    <p>Ava ensures our products are bug-free and user-friendly.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #34495e;"></div>
+                    <h3>Ethan Lee</h3>
+                    <div class="role">DevOps Engineer</div>
+                    <p>Ethan streamlines our deployment and infrastructure processes.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #d35400;"></div>
+                    <h3>Isabella Garcia</h3>
+                    <div class="role">Mobile Developer</div>
+                    <p>Isabella builds seamless mobile experiences for our users.</p>
+                </div>
+                <div class="team-card">
+                    <div class="avatar" style="background-color: #8e44ad;"></div>
+                    <h3>Noah Wilson</h3>
+                    <div class="role">Security Specialist</div>
+                    <p>Noah protects our systems with cutting-edge security practices.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact">
             <h1>Contact Us</h1>
-            <p>Our Github: https://github.com/NUSHDev/</p>
+            <p>Our Github: <a href="https://github.com/NUSHDev/" target="_blank">https://github.com/NUSHDev/</a></p>
         </section>
     </div>
 
